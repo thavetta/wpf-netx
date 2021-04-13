@@ -1,0 +1,61 @@
+﻿<Window x:Class="Prevodnik.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Prevodnik"
+        mc:Ignorable="d"
+        Title="Prevodnik" Height="450" Width="800" FontSize="20">
+    <Window.CommandBindings>
+        <CommandBinding
+            Command="{x:Static local:MainWindow.PrevodCommand}"
+            CanExecute="CanExecutePrevod"
+            Executed="ExecutedPrevod" />
+    </Window.CommandBindings>
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="10" />
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="TextAlignment" Value="Center" />
+            <Setter Property="Width" Value="150" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="TextRadek1" Grid.Row="0" Grid.Column="0" d:Text="100" />
+        <TextBox x:Name="TextRadek2" Grid.Row="1" Grid.Column="0" d:Text="120" />
+        <TextBox x:Name="TextRadek3" Grid.Row="2" Grid.Column="0" d:Text="140" />
+        <TextBox x:Name="TextRadek4" Grid.Row="3" Grid.Column="0" d:Text="160" />
+
+        <Button Grid.Column="1" Grid.Row="0" Command="{x:Static local:MainWindow.PrevodCommand}" CommandParameter="CnaF"
+                CommandTarget="{Binding ElementName=TextRadek1}">C na F</Button>
+        <Button Grid.Column="1" Grid.Row="1" Command="{x:Static local:MainWindow.PrevodCommand}" CommandParameter="FnaC"
+                CommandTarget="{Binding ElementName=TextRadek2}">F na C</Button>
+        <Button Grid.Column="1" Grid.Row="2" Command="{x:Static local:MainWindow.PrevodCommand}" CommandParameter="MnaS"
+                CommandTarget="{Binding ElementName=TextRadek3}">metry na stopy</Button>
+        <Button Grid.Column="1" Grid.Row="3" Command="{x:Static local:MainWindow.PrevodCommand}" CommandParameter="SnaM"
+                CommandTarget="{Binding ElementName=TextRadek4}">stopy na metry</Button>
+
+        <Label x:Name="VysledekRadek1" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Center" d:Content="200"/>
+        <Label x:Name="VysledekRadek2" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Center" d:Content="150"/>
+        <Label x:Name="VysledekRadek3" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Center" d:Content="2500"/>
+        <Label x:Name="VysledekRadek4" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Center" d:Content="400"/>
+    </Grid>
+</Window>
