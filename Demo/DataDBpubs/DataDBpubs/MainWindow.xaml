@@ -12,7 +12,7 @@
     <DockPanel x:Name="HlavniPanel" DataContext="{StaticResource ViewModel}">
         <ToolBarTray DockPanel.Dock="Top">
             <ToolBar >
-                
+                <Button Command="{Binding LoadCommand}" >Load</Button>
                 <Button Command="{Binding SaveCommand}" >Save</Button>
             </ToolBar>
         </ToolBarTray>
