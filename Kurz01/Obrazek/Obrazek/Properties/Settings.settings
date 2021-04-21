@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Obrazek.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="VelikostPisma" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">12</Value>
+    </Setting>
+    <Setting Name="BarvaX" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">192, 64, 0</Value>
+    </Setting>
+    <Setting Name="WebSluzba" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://server/cesta</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

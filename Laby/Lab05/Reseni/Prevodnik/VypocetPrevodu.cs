@@ -43,6 +43,7 @@ namespace Prevodnik
         public void Vypocet()
         {
             VystupniHodnota = Prevod?.Invoke(VstupniHodnota) ?? 0;
+            
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
