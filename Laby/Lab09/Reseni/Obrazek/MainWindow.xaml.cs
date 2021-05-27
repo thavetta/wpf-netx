@@ -28,10 +28,15 @@ namespace Obrazek
 
         private bool barvaP;
 
-        private void AkceP(object sender, MouseButtonEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            OcickoP.Fill = barvaP ? Brushes.Black : Brushes.Red;
-            barvaP = !barvaP;
+
         }
+
+        //private void AkceP(object sender, MouseButtonEventArgs e)
+        //{
+        //    OcickoP.Fill = barvaP ? Brushes.Black : Brushes.Red;
+        //    barvaP = !barvaP;
+        //}
     }
 }

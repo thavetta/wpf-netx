@@ -5,9 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Obrazek"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        Loaded="Window_Loaded">
+    <Window.Resources>
+        <DrawingGroup x:Key="obrazek">
+            <GeometryDrawing Brush="Yellow">
+                <GeometryDrawing.Pen>
+                    <Pen Brush="Black" Thickness="6" />
+                </GeometryDrawing.Pen>
+                <GeometryDrawing.Geometry>
+                    <EllipseGeometry RadiusX="50" RadiusY="50" Center="50,50" />
+                </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+            <GeometryDrawing Brush="Black">
+                <GeometryDrawing.Geometry>
+                    <GeometryGroup>
+                        <EllipseGeometry RadiusX="5" RadiusY="10" Center="35,34" />
+                        <EllipseGeometry RadiusX="5" RadiusY="10" Center="65,34" />
+                    </GeometryGroup>
+                </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+            <GeometryDrawing Geometry="M 20,60 Q 50,100 80,60">
+                <GeometryDrawing.Pen>
+                    <Pen Brush="Black" Thickness="4" EndLineCap="Round" StartLineCap="Round" />
+                </GeometryDrawing.Pen>
+                
+            </GeometryDrawing>
+
+        </DrawingGroup>
+    </Window.Resources>
     <Grid>
-        <Viewbox>
+        <Button Width="150" Height="100">
+            <StackPanel>
+                <Image Width="50" Height="50">
+                    <Image.Source>
+                        <DrawingImage Drawing="{StaticResource obrazek}" />
+                    </Image.Source>
+                </Image>
+                <TextBlock HorizontalAlignment="Center">Pokus</TextBlock>
+            </StackPanel>    
+        </Button>
+        <!--<Image>
+            <Image.Source>
+                <DrawingImage Drawing="{StaticResource obrazek}" />
+            </Image.Source>
+        </Image>-->
+        <!--<Viewbox>
         <Canvas Height="100"  Width="100">
             <Ellipse Width="100" Height="100" Fill="Yellow" StrokeThickness="5" Stroke="Black" />
                 <Ellipse x:Name="OcickoP" Canvas.Top="24" Canvas.Left="30" Width="10" Height="20" Fill="Black" MouseLeftButtonUp="AkceP" />
@@ -16,6 +59,6 @@
                   Data="M 20,60 Q 50,100 80,60 " />
                 
             </Canvas>
-        </Viewbox>
+        </Viewbox>-->
     </Grid>
 </Window>
