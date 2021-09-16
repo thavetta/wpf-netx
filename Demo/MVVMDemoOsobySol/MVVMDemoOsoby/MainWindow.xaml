@@ -1,0 +1,70 @@
+﻿<Window x:Class="MVVMStart.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVVMStart"
+        xmlns:model="clr-namespace:MVVMStart.Models"
+        xmlns:vm="clr-namespace:MVVMStart.ViewModels"
+        xmlns:view="clr-namespace:MVVMStart.Views"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <local:MainViewModel x:Key="MainViewModel" />
+        
+        <DataTemplate DataType="{x:Type vm:OsobaViewModel}">
+            <view:OsobaView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type model:Osoba}">
+            <Grid>
+                <StackPanel>
+                    <TextBlock Text="{Binding Meno}" FontWeight="Bold" />
+                    <TextBlock Text="{Binding Mesto}" FontWeight="Light" />
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+    </Window.Resources>
+    <DockPanel DataContext ="{StaticResource MainViewModel}">
+        <Menu x:Name="menu" DockPanel.Dock="Top" HorizontalAlignment="Stretch" Height="20" VerticalAlignment="Top" >
+            <MenuItem Header="Ovladani">
+                <MenuItem Header="Open" HorizontalAlignment="Left" Width="140"/>
+                <MenuItem Header="Save" Command="{Binding SaveOsoba}" HorizontalAlignment="Left" Width="140"/>
+                <Separator HorizontalAlignment="Left" Height="2" Width="140"/>
+                <MenuItem Header="End" Command="SystemCommands.CloseWindowCommand"/>
+            </MenuItem>
+            <MenuItem Header="Edit">
+                <MenuItem Command="ApplicationCommands.Copy" />
+                <MenuItem Command="ApplicationCommands.Cut"/>
+                <MenuItem Command="ApplicationCommands.Paste" />
+                
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Command="ApplicationCommands.Help" />
+            </MenuItem>
+        </Menu>
+
+        <StatusBar DockPanel.Dock="Bottom"  >
+            <StatusBarItem Content="{Binding VybranaOsoba.Meno}" VerticalAlignment="Top"/>
+        </StatusBar>
+
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+
+            <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch" />
+
+            <ListView Grid.Column="0" ItemsSource="{Binding SeznamOsob}" 
+                     SelectedItem="{Binding VybranaOsoba}" >
+                
+            </ListView>
+
+            <ContentControl Grid.Column="2" Content="{Binding ViewModel}"/>
+            
+
+        </Grid>
+
+    </DockPanel>
+</Window>
