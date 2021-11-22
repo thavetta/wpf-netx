@@ -2,6 +2,7 @@
 
 V tomto labu si vyzkoušíte základní možnosti umístění prvků do Gridu.
 Jednoduchá aplikace umožní převádět jednotky mezi sebou z C na F a obráceně a metry na stopy a naopak.
+![Vzor aplikace](../../Images/Lab2.png)
 
 1. Vytvořte projekt typu WPF App pro .NET 5, ne pro .NET Framework v prostředí VS 2019
 1. Do základního Gridu okna MainWindow přidejte
@@ -24,7 +25,7 @@ Jednoduchá aplikace umožní převádět jednotky mezi sebou z C na F a obráce
    - Margin="10", opět okraj kolem prvku
    - Click="PrevodCnaF", toto bude definovat metodu, která se zavolá při kliknutí na tlačítko. Uvedená hodnota bude u prvního, u dalších bude PrevodFnaC, pak PrevodMnaS a PrevodSnaM
    - IsEnabled="{Binding ElementName=TextRadekX, Path=Text.Length, Mode=OneWay}", X bude mít odpovídající hodnoty 1 až 4. Tato vlastnost zajistí, že se tlačítka Enabluje až v okamžiku, kdy v TextBoxu bude nějaká hodnota. Když Text.Length bude 0, IsEnabled bude false a tlačítko nebude použitelné.
-   - Obsah elementu Button bude postupně: C na F, F na C, M na S, S na M
+   - Obsah elementu Button bude postupně: C na F, F na C, metry na stopy, stopy na metry
 1. Přidejte 4x Label a nastavte mu
    - x:Name="VysledekRadekX", kde X bude opět 1 až 4 
    - Grid.Row="X", tentokrát opět X od 0 do 3 
