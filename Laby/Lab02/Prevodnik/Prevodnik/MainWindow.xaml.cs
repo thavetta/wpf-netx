@@ -34,6 +34,7 @@ namespace Prevodnik
             VysledekRadek1.Content = vysledek.ToString();
         }
 
+
         private void PrevodFnaC(object sender, RoutedEventArgs e)
         {
             if (!Double.TryParse(TextRadek2.Text, out double hodnota))
@@ -43,7 +44,7 @@ namespace Prevodnik
             VysledekRadek2.Content = vysledek.ToString();
         }
 
-        private void PrevodMtoS(object sender, RoutedEventArgs e)
+        private void PrevodMnaS(object sender, RoutedEventArgs e)
         {
             if (!Double.TryParse(TextRadek3.Text, out double hodnota))
                 return;
@@ -52,7 +53,7 @@ namespace Prevodnik
             VysledekRadek3.Content = vysledek.ToString();
         }
 
-        private void PrevodStoM(object sender, RoutedEventArgs e)
+        private void PrevodSnaM(object sender, RoutedEventArgs e)
         {
             if (!Double.TryParse(TextRadek4.Text, out double hodnota))
                 return;
@@ -60,5 +61,7 @@ namespace Prevodnik
             double vysledek = hodnota / 3.280839895;
             VysledekRadek4.Content = vysledek.ToString();
         }
+
+        
     }
 }

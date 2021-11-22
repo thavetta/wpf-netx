@@ -29,9 +29,9 @@
                 IsEnabled="{Binding ElementName=TextRadek1, Path=Text.Length, Mode=OneWay}">C na F</Button>
         <Button Grid.Column="1" Grid.Row="1" Margin="10" Click="PrevodFnaC"
                 IsEnabled="{Binding ElementName=TextRadek2, Path=Text.Length, Mode=OneWay}">F na C</Button>
-        <Button Grid.Column="1" Grid.Row="2" Margin="10" Click="PrevodMtoS"
+        <Button Grid.Column="1" Grid.Row="2" Margin="10" Click="PrevodMnaS"
                 IsEnabled="{Binding ElementName=TextRadek3, Path=Text.Length, Mode=OneWay}">metry na stopy</Button>
-        <Button Grid.Column="1" Grid.Row="3" Margin="10" Click="PrevodStoM"
+        <Button Grid.Column="1" Grid.Row="3" Margin="10" Click="PrevodSnaM"
                 IsEnabled="{Binding ElementName=TextRadek4, Path=Text.Length, Mode=OneWay}">stopy na metry</Button>
 
         <Label x:Name="VysledekRadek1" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Center" d:Content="200"/>
