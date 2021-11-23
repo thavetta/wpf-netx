@@ -29,14 +29,14 @@ namespace Prevodnik
 
         private void CanExecutePrevod(object sender, CanExecuteRoutedEventArgs e)
         {
-            if (!(e.Source is TextBox vstup))
+            if (e.Source is not TextBox vstup)
                 return;
             e.CanExecute = vstup.Text.Length > 0;
         }
 
         private void ExecutedPrevod(object sender, ExecutedRoutedEventArgs e)
         {
-            if (!(e.Source is TextBox vstup))
+            if (e.Source is not TextBox vstup)
                 return;
             Label vystup;
             Func<double, double> vypocet;

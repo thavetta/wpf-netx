@@ -18,6 +18,11 @@
             <Setter Property="TextAlignment" Value="Center" />
             <Setter Property="Width" Value="150" />
         </Style>
+        <Style TargetType="Label">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="5" />
+        </Style>
     </Window.Resources>
     <Grid Button.Click="Prevod">
         <Grid.RowDefinitions>
@@ -47,9 +52,9 @@
         <Button Grid.Column="1" Grid.Row="3" Tag="SnaM"
                 IsEnabled="{Binding ElementName=TextRadek4, Path=Text.Length, Mode=OneWay}">stopy na metry</Button>
 
-        <Label x:Name="VysledekRadek1" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Center" d:Content="200"/>
-        <Label x:Name="VysledekRadek2" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Center" d:Content="150"/>
-        <Label x:Name="VysledekRadek3" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Center" d:Content="2500"/>
-        <Label x:Name="VysledekRadek4" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Center" d:Content="400"/>
+        <Label x:Name="VysledekRadek1" Grid.Row="0" Grid.Column="2" d:Content="200"/>
+        <Label x:Name="VysledekRadek2" Grid.Row="1" Grid.Column="2" d:Content="150"/>
+        <Label x:Name="VysledekRadek3" Grid.Row="2" Grid.Column="2" d:Content="2500"/>
+        <Label x:Name="VysledekRadek4" Grid.Row="3" Grid.Column="2" d:Content="400"/>
     </Grid>
 </Window>

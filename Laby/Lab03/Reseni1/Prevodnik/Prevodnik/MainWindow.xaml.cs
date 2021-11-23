@@ -27,7 +27,7 @@ namespace Prevodnik
 
         private void Prevod(object sender, RoutedEventArgs e)
         {
-            if (!(e.Source is Button tlacitko))
+            if (e.Source is not Button tlacitko)
                 return;
             TextBox vstup;
             Label vystup;
