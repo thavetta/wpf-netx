@@ -75,7 +75,7 @@ V tomto cvičení zavedeme pro výpočet RoutedCommand, který navážeme na jed
             e.CanExecute = vstup.Text.Length > 0;
         }  
         
- 1. Metodu Prevod z minulého cvičení mírně upravíme:
+1. Metodu Prevod z minulého cvičení mírně upravíme:
 
         private void ExecutedPrevod(object sender, ExecutedRoutedEventArgs e)
         {
@@ -92,5 +92,6 @@ V tomto cvičení zavedeme pro výpočet RoutedCommand, který navážeme na jed
                     break;
    
    Další pokračování si doplňte podle své fantazie. Výpočet na konci není důvod měnit.
+   
 1. Tím by mělo být hotovo, ověřte že aplikace nadále funguje úplně stejně, že se tlačítka správně aktivují.
    
