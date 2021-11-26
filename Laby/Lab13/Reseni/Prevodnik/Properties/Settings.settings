@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Prevodnik.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Barvicky" Type="System.String" Scope="User">
+      <Value Profile="(Default)">green;yellow;red</Value>
+    </Setting>
+    <Setting Name="Hranice" Type="System.String" Scope="User">
+      <Value Profile="(Default)">100;500</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

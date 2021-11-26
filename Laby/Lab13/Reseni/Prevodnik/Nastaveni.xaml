@@ -1,0 +1,29 @@
+﻿<Window x:Class="Prevodnik.Nastaveni"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Prevodnik"
+        xmlns:prop="clr-namespace:Prevodnik.Properties"
+        mc:Ignorable="d"
+        Title="Nastaveni" Height="220" Width="380">
+    <Grid Margin="0,0,0,5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Margin="10">
+            <Label>Barvy:</Label>
+            <TextBox Text="{Binding Barvicky,Source={x:Static prop:Settings.Default},Mode=TwoWay}" />
+            <Label>Hranice</Label>
+            <TextBox Text="{Binding Hranice,Source={x:Static prop:Settings.Default},Mode=TwoWay}" />
+
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="2">
+            <Button Margin="10" MinWidth="80" Click="Cancel" IsCancel="True" >Zruš</Button>
+            <Button Margin="10" MinWidth="80" Click="Save" IsDefault="True">Ulož</Button>
+            <Button Margin="10" MinWidth="80" Click="Reset">Výchozí nastavení</Button>
+        </StackPanel>
+    </Grid>
+</Window>
