@@ -9,13 +9,18 @@
     <Window.Resources>
         <local:VypocetPrevodu x:Key="VypocetPrevodu" />
         <local:BarvaKonvertor x:Key="BarvaKonvertor" />
-        <Style TargetType="TextBox">
+        <Style TargetType="{x:Type TextBox}">
             <Setter Property="HorizontalAlignment" Value="Center" />
             <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="Margin" Value="5" />
             <Setter Property="TextWrapping" Value="Wrap" />
             <Setter Property="TextAlignment" Value="Center" />
             <Setter Property="Width" Value="150" />
+        </Style>
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="5" />
         </Style>
     </Window.Resources>
     <Grid DataContext="{StaticResource VypocetPrevodu}">
@@ -39,7 +44,7 @@
             <ListBoxItem  Selected="AkceSnaM">stopy na meter</ListBoxItem>
         </ListBox>
         
-        <Label Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Center" d:Content="200"
+        <Label Grid.Row="0" Grid.Column="2" d:Content="200"
                Content="{Binding VystupniHodnota}" 
                Foreground="{Binding VystupniHodnota, Converter={StaticResource BarvaKonvertor}}"/>
         

@@ -12,18 +12,18 @@ namespace Prevodnik
     {
         private double vstupniHodnota;
         public double VstupniHodnota 
-        { 
+        {
             get => vstupniHodnota;
             set
             {
                 if (value == vstupniHodnota)
                     return;
                 vstupniHodnota = value;
+                OnPropertyChanged(nameof(VstupniHodnota));
                 Vypocet();
             }
-
         }
-        
+
         private double vystupniHodnota;
 
         public double VystupniHodnota
@@ -43,7 +43,6 @@ namespace Prevodnik
         public void Vypocet()
         {
             VystupniHodnota = Prevod?.Invoke(VstupniHodnota) ?? 0;
-            
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
