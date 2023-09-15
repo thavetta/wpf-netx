@@ -15,31 +15,37 @@ V tomto labu si otestujete nejdřív tvorbu a použití stylů, pak použití Co
 1. Otevřte soubor MainWindow.xaml.cs a přidejte si metodu Prevod (vzor metody viz. stávající událostní procedury).
 1. Na začátek metody dejte kód, který připraví lokální proměnné a otestuje, že vstupním objektem je skutečně Button. Lokální proměnné budou složit pro zjednodušení kódu který bude řešit samotný převod.
 
+        ```csharp
         if (e.Source is not Button tlacitko)
           return;
         TextBox vstup;
         Label vystup;
         Func<double, double> vypocet;
-        
+        ```
+
 1. Následovat bude switch, který na základě hodnoty tlacitko.Tag nastaví vstup, vystup a vypocet. Case pro převod CnaF by mohl vypadat takto:
 
+        ```csharp
         case "CnaF":
              vstup = TextRadek1;
              vystup = VysledekRadek1;
              vypocet = x => 1.8 * x + 32;
              break;
-             
+        ```
+
 1. Další case pro zbývající převody vypracujte ve stejném duchu
 1. Na závěr za switch přidejte kód, který zajistí převod obsahu TextBoxu na double, výpočet převodu a vložení výsledku do labelu. Kód by mohl vypadat takto:
 
+        ```csharp
         if (!Double.TryParse(vstup.Text, out double hodnota))
                 return;
 
         double vysledek = vypocet(hodnota);
         vystup.Content = vysledek.ToString();
-        
+        ```
+
 1. Otestujte, zda je aplikace funkční.
-1. Pokud funguje, zastavte si aplikaci na začátku metody Prevod a podívejte se na to, co je v proměnné sender a jaký má obsah parametr e. 
+1. Pokud funguje, zastavte si aplikaci na začátku metody Prevod a podívejte se na to, co je v proměnné sender a jaký má obsah parametr e.
 
 ## Cvičení 2
 
@@ -47,8 +53,10 @@ V tomto cvičení zavedeme pro výpočet RoutedCommand, který navážeme na jed
 
 1. Otevřte zdrojový soubor MainWindow.xaml.cs a do třídy MainWindow přidejte statický členský prvek
 
+        ```csharp
         public static RoutedCommand PrevodCommand = new RoutedCommand();
-        
+        ```
+
 1. Otevřte MainWindow.xaml a do elementu Window vložte
 
         <Window.CommandBindings>
@@ -57,7 +65,7 @@ V tomto cvičení zavedeme pro výpočet RoutedCommand, který navážeme na jed
             CanExecute="CanExecutePrevod"
             Executed="ExecutedPrevod" />
         </Window.CommandBindings>
-        
+
    Tento kód zajistí nastavení Commandu na vytvořený statický členský prvek PrevodCommand a dále nastaví metody pro vykonání testu zda lze Command provést (CanExecute) a samotné vykonání Commandu, pokud dojde k jeho aktivaci v UI.
 1. Upravte každý Button podle tohoto vzoru:
 
@@ -68,15 +76,18 @@ V tomto cvičení zavedeme pro výpočet RoutedCommand, který navážeme na jed
    CommandTarget vytvoří vazbu na TextBox, který bude z daným tlačítkem kooperovat. Tím se vyřeší vazba na vstupní hodnotu převodu a určení, zda lze tlačítko aktivovat.
 1. Vraťte se do souboru MainWindow.xaml.cs a přidejte metodu CanExecutePrevod, která určí zda je možno tlačítko aktivovat:
 
+        ```csharp
         private void CanExecutePrevod(object sender, CanExecuteRoutedEventArgs e)
         {
             if (e.Source is not TextBox vstup)
                 return;
             e.CanExecute = vstup.Text.Length > 0;
-        }  
-        
+        }
+        ```
+
 1. Metodu Prevod z minulého cvičení mírně upravíme:
 
+        ```csharp
         private void ExecutedPrevod(object sender, ExecutedRoutedEventArgs e)
         {
             if (e.Source is not TextBox vstup)
@@ -90,8 +101,8 @@ V tomto cvičení zavedeme pro výpočet RoutedCommand, který navážeme na jed
                     vystup = VysledekRadek1;
                     vypocet = x => 1.8 * x + 32;
                     break;
-   
+        ```
+
    Další pokračování si doplňte podle své fantazie. Výpočet na konci není důvod měnit.
-   
+
 1. Tím by mělo být hotovo, ověřte že aplikace nadále funguje úplně stejně, že se tlačítka správně aktivují.
-   

@@ -43,19 +43,21 @@ Jednoduchá aplikace umožní převádět jednotky mezi sebou z C na F a obráce
 1. Pokud tam tyto metody nejsou, vraťte se na MainWindow.xaml a klikněte na tlačítka, pro které chybí metoda. VS Vám metodu udělá.
 1. Do každé metody dejte jako první příkaz kód (X bude odpovídat správnému číslu 1 až 4):
 
-        if (!Double.TryParse(TextRadekX.Text, out double hodnota))
-            return;
-        
+   ```csharp
+   if (!Double.TryParse(TextRadekX.Text, out double hodnota))
+      return;
+   ```
+
 1. Další příkaz bude výpočet patřičného převodu, např. pro C na F to bude 
- 
-        double vysledek = 1.8 * hodnota + 32;
-        
+
+   ```csharp
+   double vysledek = 1.8 * hodnota + 32;
+   ```
+
 1. A na závěr bude kód pro zobrazení výsledku (X bude postupně 1 až 4)
 
-        VysledekRadekX.Content = vysledek.ToString();
+   ```csharp
+   VysledekRadekX.Content = vysledek.ToString();
+   ```
 
 1. Pokud máte všechny metody zadané, můžete zkusit aplikaci otestovat a ověřit, že správně převádí jednotky.
-
-         
-
-         
