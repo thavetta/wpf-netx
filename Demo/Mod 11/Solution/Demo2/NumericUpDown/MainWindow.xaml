@@ -1,0 +1,15 @@
+﻿<Window x:Class="Sample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:local="clr-namespace:Sample"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Viewbox Margin="5">
+        <StackPanel>
+            <local:NumericUpDown x:Name="UpDown"
+                                 Height="100" 
+                                 Width="200" />
+            <CheckBox Content="Is NumericUpDown Enabled?"
+                      IsChecked="{Binding ElementName=UpDown, Path=IsEnabled}" />
+        </StackPanel>
+    </Viewbox>
+</Window>
